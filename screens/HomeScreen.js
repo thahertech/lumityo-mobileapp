@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Linking, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import styles from '../styles'; // Import styles from the separate file
+import styles from '../styles';
 import heroImage from '../assets/lapland.jpg'
+import ContactComponent from './ContactComponent'; 
+
 
 const CustomButton = ({ title, onPress }) => (
   <TouchableOpacity style={styles.menuItem} onPress={onPress}>
@@ -11,7 +13,7 @@ const CustomButton = ({ title, onPress }) => (
 );
 
 const HomeScreen = () => {
-  const phoneNumber = '+358407362403'; // Replace with the desired phone number
+  const phoneNumber = '+358407362403';
   const navigation = useNavigation();
 
   const handleCallButtonPress = () => {
@@ -29,7 +31,7 @@ const HomeScreen = () => {
   };
 
   const handleOrderButtonPress = () => {
-    navigation.navigate('Order');
+    navigation.navigate('Tilaus');
   };
 
   return (
@@ -39,25 +41,18 @@ const HomeScreen = () => {
         style={styles.headerImage}
         resizeMode="cover"
       />
-  
       <View>
         <View style={styles.menuItemContainer}>
           <CustomButton title="Varaa lumityö" onPress={handleOrderButtonPress} />
         </View>
-  
+
         <View style={styles.menuItemContainer}>
-          {/* Apply the light grey style directly */}
-          <TouchableOpacity
-            style={styles.lightGreyButton}
-            onPress={handleCallButtonPress}
-          >
-            <Text style={[styles.menuItemText, { color: 'black' }]}>Soita</Text>
-          </TouchableOpacity>
+          <ContactComponent phoneNumber={phoneNumber} />
         </View>
       </View>
     </View>
   );
 };
 
-
 export default HomeScreen;
+

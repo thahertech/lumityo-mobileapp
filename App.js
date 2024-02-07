@@ -4,8 +4,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 import HomeScreen from './screens/HomeScreen';
-import ContactScreen from './screens/ContactScreen';
 import OrderScreen from './screens/OrderScreen';
+import ContactComponent from './screens/ContactComponent';
 
 const Stack = createStackNavigator();
 
@@ -14,8 +14,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Lumityöt X" component={HomeScreen} />
-        <Stack.Screen name="Contact" component={ContactScreen} />
-        <Stack.Screen name="Order" component={OrderScreen} />
+        <Stack.Screen name="Contact" component={ContactComponent} />
+        <Stack.Screen name="Tilaus" component={OrderScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
