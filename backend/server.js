@@ -3,8 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
 
+const express = require('express');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000; // Use the Heroku-assigned port or default to 3000
+
+// Your existing server setup code goes here
 
 app.use(bodyParser.json());
 
@@ -34,6 +37,6 @@ app.post('/sendEmail', async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
