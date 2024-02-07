@@ -6,20 +6,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  headerImage: {
-    width: '100%',
-    height: 240,
-    marginTop: -200,
-    marginBottom: 80,
-  },
-  menuItemContainer: {
-    marginVertical: 10,
-  },
-  menuItem: {
-    borderRadius: 20,
-    padding: 20,
-    backgroundColor: '#4AA1DB',
     ...Platform.select({
       android: {
         elevation: 5,
@@ -27,7 +13,42 @@ const styles = StyleSheet.create({
       ios: {
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.3,
+        shadowOpacity: 0.9,
+        shadowRadius: 5,
+      },
+    }),
+  },
+  headerImage: {
+    width: '100%',
+    height: 900,
+    opacity:0.75,
+    position:'absolute',
+    
+ 
+  },
+  smallerHeaderImage: {
+    width: '60%',
+    height: 220,
+    opacity:0.6,
+    position: 'absolute',
+    top: 175,
+    left:'auto',
+    borderRadius: 5,
+  },
+ 
+  menuItem: {
+    top:140,
+    borderRadius: 20,
+    padding: 15,
+    backgroundColor: 'lightblue',
+    ...Platform.select({
+      android: {
+        elevation: 5,
+      },
+      ios: {
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 5 },
+        shadowOpacity: 0.4,
         shadowRadius: 5,
       },
     }),
@@ -35,15 +56,19 @@ const styles = StyleSheet.create({
   menuItemText: {
     color: 'black',
     textAlign: 'center',
-    fontSize: 60,
+    fontFamily: 'Arial',
+    fontWeight: 'regular',
+    letterSpacing: 2,
+    fontSize: 36,
   },
   centerText: {
     textAlign: 'center',
   },
-  // Add a new style for the light grey button
+
   lightGreyButton: {
     borderRadius: 20,
-    padding: 20,
+    top:150,
+    padding: 15,
     backgroundColor: '#D3D3D3',  // Light grey color
     ...Platform.select({
       android: {
@@ -58,8 +83,28 @@ const styles = StyleSheet.create({
     }),
 
     inputContainer:{
-        color:"black",
+        color:"black"
     }
+  },
+  confirmButton: {
+
+    ios: {
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
+    },
+    backgroundColor: 'lightblue',
+    padding: 15,
+    borderRadius: 5,
+    alignItems: 'center',
+
+    // Add elevation for Android
+    elevation: 3,
+  },
+  confirmButtonText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
 

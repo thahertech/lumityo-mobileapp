@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Linking, Image} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import styles from '../styles';
-import heroImage from '../assets/lapland.jpg'
-import ContactComponent from './ContactComponent'; 
+import styles from '../styles'; 
+import heroImage from '../assets/Mountains.jpg'
+import HeaderImage from '../assets/SnowTruck.png'
+import ContactComponent from './ContactComponent';
 
 
 const CustomButton = ({ title, onPress }) => (
@@ -36,6 +37,12 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
+
+      <Image
+        source={HeaderImage}
+        style={styles.smallerHeaderImage}
+        resizeMode="cover" />
+
       <Image
         source={heroImage}
         style={styles.headerImage}
@@ -43,7 +50,7 @@ const HomeScreen = () => {
       />
       <View>
         <View style={styles.menuItemContainer}>
-          <CustomButton title="Varaa lumityö" onPress={handleOrderButtonPress} />
+          <CustomButton title="Tilaa Lumityö" onPress={handleOrderButtonPress} />
         </View>
 
         <View style={styles.menuItemContainer}>
