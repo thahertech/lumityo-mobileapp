@@ -1,8 +1,18 @@
 import React from 'react';
-import { View, Text, Button, Linking } from 'react-native';
+import { View, TouchableOpacity, Text, Linking, Image} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import styles from '../styles'; // Import styles from the separate file
+import heroImage from '../assets/lapland.jpg'
+
+const CustomButton = ({ title, onPress }) => (
+  <TouchableOpacity style={styles.menuItem} onPress={onPress}>
+    <Text style={[styles.menuItemText]}>{title}</Text>
+  </TouchableOpacity>
+);
 
 const HomeScreen = () => {
   const phoneNumber = '+358407362403'; // Replace with the desired phone number
+  const navigation = useNavigation();
 
   const handleCallButtonPress = () => {
     const phoneUrl = `tel:${phoneNumber}`;
@@ -18,13 +28,36 @@ const HomeScreen = () => {
       .catch((err) => console.error('Error occurred:', err));
   };
 
+  const handleOrderButtonPress = () => {
+    navigation.navigate('Order');
+  };
+
   return (
-    <View>
-      <Text>Lumityö X Tilaus</Text>
-      <Button title="Soita" onPress={handleCallButtonPress} />
-      <Button title="Varaa lumityö" onPress={() => navigation.navigate('Order')} />
+    <View style={styles.container}>
+      <Image
+        source={heroImage}
+        style={styles.headerImage}
+        resizeMode="cover"
+      />
+  
+      <View>
+        <View style={styles.menuItemContainer}>
+          <CustomButton title="Varaa lumityö" onPress={handleOrderButtonPress} />
+        </View>
+  
+        <View style={styles.menuItemContainer}>
+          {/* Apply the light grey style directly */}
+          <TouchableOpacity
+            style={styles.lightGreyButton}
+            onPress={handleCallButtonPress}
+          >
+            <Text style={[styles.menuItemText, { color: 'black' }]}>Soita</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };
+
 
 export default HomeScreen;
