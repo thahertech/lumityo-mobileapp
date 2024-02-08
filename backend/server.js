@@ -3,7 +3,7 @@ const express = require('express');
 const sgMail = require('@sendgrid/mail');
 
   const app = express();
-  const PORT = process.env.PORT || 8081;
+  const PORT = process.env.PORT || 3000;
 
   app.use(express.json());
 
