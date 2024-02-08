@@ -1,17 +1,13 @@
 require('dotenv').config();
-const express = require('express');
 const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
 
-const express = require('express');
-const app = express();
+const app = express('express');
 const PORT = process.env.PORT || 3000; // Use the Heroku-assigned port or default to 3000
 
 
-app.use(bodyParser.json());
-
 app.get('/', (req, res) => {
-    res.send('Server is running.'); 
+    res.send('Server is running.');
   });
 
 app.post('/sendEmail', async (req, res) => {
