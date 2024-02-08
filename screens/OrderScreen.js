@@ -34,7 +34,7 @@ const OrderScreen = () => {
       return;
     }
 
-    const backendEndpoint = 'https://lumityo-e0d54835abcd.herokuapp.com';
+    const backendEndpoint = 'https://lumityo-e0d54835abcd.herokuapp.com/sendEmail';
 
     try {
       const response = await fetch(backendEndpoint, {
