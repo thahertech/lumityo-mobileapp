@@ -7,12 +7,11 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000; // Use the Heroku-assigned port or default to 3000
 
-// Your existing server setup code goes here
 
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('Server is running.'); // or any other response you want to send
+    res.send('Server is running.'); 
   });
 
 app.post('/sendEmail', async (req, res) => {
