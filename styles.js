@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
   },
   headerImage: {
     width: '100%',
-    height: 900,
-    opacity:0.75,
+    height: '100%',
+    opacity:0.65,
     position:'absolute',
     
  

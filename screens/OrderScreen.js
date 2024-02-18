@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, Image, View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Platform } from 'react-native';
 
-import heroImage from '../assets/SnowView.jpg'
 import bgImage from '../assets/Mountains.jpg'
 
 const OrderScreen = () => {
@@ -34,7 +33,7 @@ const OrderScreen = () => {
       return;
     }
 
-    const backendEndpoint = 'https://lumityo-e0d54835abcd.herokuapp.com/sendEmail';
+    const backendEndpoint = 'http://localhost:3000/sendEmail';
 
     try {
       const response = await fetch(backendEndpoint, {
@@ -51,13 +50,13 @@ const OrderScreen = () => {
       });
 
       if (response.ok) {
-        Alert.alert('Tilaus Vahvistettu', `Kiitos ${selectedService} tilauksesta, tehtävä hoidetaan seuraavalla kierroksella!`);
+        Alert.alert('Tilaus Vahvistettu', `Kiitos ${selectedService} tilauksesta!`);
       } else {
         Alert.alert('Virhe', 'TIlausta ei vahvistettu. Yritä uudelleen.');
       }
     } catch (error) {
       console.error('Error occurred:', error);
-      Alert.alert('Virhe', 'TIlausta ei vahvistettu. Yritä uudelleen.');
+      Alert.alert('Virhe', 'Tilausta ei vahvistettu. Yritä uudelleen.');
     }
   };
 
@@ -105,6 +104,8 @@ const OrderScreen = () => {
           value={phoneNumber}
           onChangeText={(text) => setPhoneNumber(text)}
           keyboardType="phone-pad"
+          autoCompleteType="tel"  // Specify 'tel' for phone numbers
+
         />
       </View>
 
@@ -115,6 +116,8 @@ const OrderScreen = () => {
           placeholder="Osoite"
           value={address}
           onChangeText={(text) => setAddress(text)}
+          autoCompleteType="street-address" 
+
         />
       </View>
 
@@ -125,6 +128,8 @@ const OrderScreen = () => {
           placeholder="Etunimi"
           value={firstName}
           onChangeText={(text) => setFirstName(text)}
+          autoCompleteType="given-name"  
+
         />
       </View>
 
