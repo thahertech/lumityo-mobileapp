@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const sgMail = require('@sendgrid/mail');
 const cors = require('cors');
@@ -12,15 +13,14 @@ app.get('/', (req, res) => {
   res.send('Server is running.');
 });
 
-
 app.post('/sendEmail', async (req, res) => {
   const { firstName, phoneNumber, address, selectedService } = req.body;
 
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
   const msg = {
-    to: 'onefakeblog@gmail.com',
-    from: 'User_1@Lumityö.com',
+    to: 'thaher.alamir@hotmail.com', // MUST BE SENDGRID VERIFIED
+    from: 'onefakeblog@gmail.com',
     subject: 'Lumityö Tilaus Vahvistus',
     text: `
       Tilaus Tiedot:\n

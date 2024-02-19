@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, Image, View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Platform } from 'react-native';
+import { ScrollView, Image, View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Platform, KeyboardAvoidingView} from 'react-native';
 
 import bgImage from '../assets/Mountains.jpg'
 
@@ -61,6 +61,11 @@ const OrderScreen = () => {
   };
 
   return (
+
+    <KeyboardAvoidingView
+    behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+    style={{ flex: 1 }}
+  >
     <ScrollView contentContainerStyle={styles.scrollViewContainer}>
       <View style={styles.container}>
     <Image
@@ -96,18 +101,6 @@ const OrderScreen = () => {
       <Text style={[styles.label, {marginBottom:29}]}>{getServiceLabel()}</Text>
     </View>
 
-      <View style={styles.inputContainer}>
-        <Text style={styles.label}>Puhelinnumero</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Puhelinnumero"
-          value={phoneNumber}
-          onChangeText={(text) => setPhoneNumber(text)}
-          keyboardType="phone-pad"
-          autoCompleteType="tel"  // Specify 'tel' for phone numbers
-
-        />
-      </View>
 
       <View style={styles.inputContainer}>
         <Text style={styles.label}>Osoite</Text>
@@ -116,7 +109,22 @@ const OrderScreen = () => {
           placeholder="Osoite"
           value={address}
           onChangeText={(text) => setAddress(text)}
-          autoCompleteType="street-address" 
+          autoCompleteType="street-address"
+          name="sreet-address"
+          id="street-address-input"
+        />
+      </View>
+      <View style={styles.inputContainer}>
+        <Text style={styles.label}>Puhelinnumero</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Puhelinnumero"
+          value={phoneNumber}
+          onChangeText={(text) => setPhoneNumber(text)}
+          keyboardType="phone-pad"
+          autoCompleteType="tel"
+          name="phone-number"
+          id="phone-number-input"
 
         />
       </View>
@@ -128,7 +136,9 @@ const OrderScreen = () => {
           placeholder="Etunimi"
           value={firstName}
           onChangeText={(text) => setFirstName(text)}
-          autoCompleteType="given-name"  
+          autoCompleteType="given-name"
+          name="first-name"
+          id="first-name-input"
 
         />
       </View>
@@ -145,6 +155,8 @@ const OrderScreen = () => {
       </TouchableOpacity>
     </View>
     </ScrollView>
+  </KeyboardAvoidingView>
+
   );
 };
 
