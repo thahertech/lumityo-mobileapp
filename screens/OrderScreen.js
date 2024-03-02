@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ScrollView, Image, View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Platform, KeyboardAvoidingView} from 'react-native';
 
-import bgImage from '../assets/Mountains.jpg'
+import bgImage from '../assets/Mountains.jpg';
 
 const OrderScreen = () => {
   const [firstName, setFirstName] = useState('');
