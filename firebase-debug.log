@@ -1,0 +1,391 @@
+[debug] [2024-03-05T10:44:11.239Z] ----------------------------------------------------------------------
+[debug] [2024-03-05T10:44:11.245Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2024-03-05T10:44:11.245Z] CLI Version:   13.4.0
+[debug] [2024-03-05T10:44:11.245Z] Platform:      darwin
+[debug] [2024-03-05T10:44:11.246Z] Node Version:  v20.5.1
+[debug] [2024-03-05T10:44:11.246Z] Time:          Tue Mar 05 2024 12:44:11 GMT+0200 (Eastern European Standard Time)
+[debug] [2024-03-05T10:44:11.246Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-05T10:44:11.360Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-05T10:44:11.361Z] > authorizing via signed-in user (thaher.alamir@hotmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2024-03-05T10:44:12.007Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:44:12.007Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-05T10:44:12.013Z] [hub] writing locator at /var/folders/fk/g975rg9d0z92098bbsn42cjh0000gp/T/hub-lumityo-project.json
+[debug] [2024-03-05T10:44:12.447Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:44:12.447Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:44:12.447Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2024-03-05T10:44:12.450Z] defaultcredentials: writing to file /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json
+[debug] [2024-03-05T10:44:12.459Z] Setting GAC to /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json"}}
+[debug] [2024-03-05T10:44:12.461Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig [none]
+[debug] [2024-03-05T10:44:13.147Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig 200
+[debug] [2024-03-05T10:44:13.147Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig {"projectId":"lumityo-project","storageBucket":"lumityo-project.appspot.com","locationId":"europe-west"}
+[info] i  ui: downloading ui-v1.11.7.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.7.zip..."}}
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  eventarc: Stopping Eventarc Emulator {"metadata":{"emulator":{"name":"eventarc"},"message":"Stopping Eventarc Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2024-03-05T10:44:13.280Z] Error: EACCES: permission denied, mkdir '/Users/ghost/.cache/firebase/emulators'
+    at Object.mkdirSync (node:fs:1414:3)
+    at module.exports.makeDirSync (/usr/local/lib/node_modules/firebase-tools/node_modules/fs-extra/lib/mkdirs/make-dir.js:23:13)
+    at downloadEmulator (/usr/local/lib/node_modules/firebase-tools/lib/emulator/download.js:17:8)
+    at Object.start (/usr/local/lib/node_modules/firebase-tools/lib/emulator/downloadableEmulators.js:373:51)
+    at EmulatorUI.start (/usr/local/lib/node_modules/firebase-tools/lib/emulator/ui.js:32:38)
+    at EmulatorRegistry.start (/usr/local/lib/node_modules/firebase-tools/lib/emulator/registry.js:18:24)
+    at startEmulator (/usr/local/lib/node_modules/firebase-tools/lib/emulator/controller.js:262:44)
+    at Object.startAll (/usr/local/lib/node_modules/firebase-tools/lib/emulator/controller.js:559:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /usr/local/lib/node_modules/firebase-tools/lib/commands/emulators-start.js:33:43
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-03-05T10:48:49.449Z] ----------------------------------------------------------------------
+[debug] [2024-03-05T10:48:49.452Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2024-03-05T10:48:49.452Z] CLI Version:   13.4.0
+[debug] [2024-03-05T10:48:49.452Z] Platform:      darwin
+[debug] [2024-03-05T10:48:49.453Z] Node Version:  v20.5.1
+[debug] [2024-03-05T10:48:49.453Z] Time:          Tue Mar 05 2024 12:48:49 GMT+0200 (Eastern European Standard Time)
+[debug] [2024-03-05T10:48:49.453Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-05T10:48:49.565Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-05T10:48:49.566Z] > authorizing via signed-in user (thaher.alamir@hotmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2024-03-05T10:48:50.252Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:48:50.252Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-05T10:48:50.257Z] [hub] writing locator at /var/folders/fk/g975rg9d0z92098bbsn42cjh0000gp/T/hub-lumityo-project.json
+[debug] [2024-03-05T10:48:50.672Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:48:50.673Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:48:50.673Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2024-03-05T10:48:50.676Z] defaultcredentials: writing to file /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json
+[debug] [2024-03-05T10:48:50.685Z] Setting GAC to /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json"}}
+[debug] [2024-03-05T10:48:50.687Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig [none]
+[debug] [2024-03-05T10:48:51.333Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig 200
+[debug] [2024-03-05T10:48:51.333Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig {"projectId":"lumityo-project","storageBucket":"lumityo-project.appspot.com","locationId":"europe-west"}
+[info] i  ui: downloading ui-v1.11.7.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.7.zip..."}}
+[debug] [2024-03-05T10:48:51.371Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip 
+[debug] [2024-03-05T10:48:51.521Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip 200
+[debug] [2024-03-05T10:48:51.521Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip [stream]
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  eventarc: Stopping Eventarc Emulator {"metadata":{"emulator":{"name":"eventarc"},"message":"Stopping Eventarc Emulator"}}
+[info] i  hub: Stopping emulator hub {"metadata":{"emulator":{"name":"hub"},"message":"Stopping emulator hub"}}
+[info] i  logging: Stopping Logging Emulator {"metadata":{"emulator":{"name":"logging"},"message":"Stopping Logging Emulator"}}
+[debug] [2024-03-05T10:48:51.942Z] Error: EACCES: permission denied, copyfile '/var/folders/fk/g975rg9d0z92098bbsn42cjh0000gp/T/tmp-19444-ssE1c5UzX4ho' -> '/Users/ghost/.cache/firebase/emulators/ui-v1.11.7.zip'
+    at Object.copyFileSync (node:fs:2993:3)
+    at copyFile (/usr/local/lib/node_modules/firebase-tools/node_modules/fs-extra/lib/copy/copy-sync.js:73:6)
+    at onFile (/usr/local/lib/node_modules/firebase-tools/node_modules/fs-extra/lib/copy/copy-sync.js:59:25)
+    at getStats (/usr/local/lib/node_modules/firebase-tools/node_modules/fs-extra/lib/copy/copy-sync.js:51:44)
+    at handleFilterAndCopy (/usr/local/lib/node_modules/firebase-tools/node_modules/fs-extra/lib/copy/copy-sync.js:36:10)
+    at Object.copySync (/usr/local/lib/node_modules/firebase-tools/node_modules/fs-extra/lib/copy/copy-sync.js:29:10)
+    at downloadEmulator (/usr/local/lib/node_modules/firebase-tools/lib/emulator/download.js:26:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.start (/usr/local/lib/node_modules/firebase-tools/lib/emulator/downloadableEmulators.js:373:13)
+    at async EmulatorRegistry.start (/usr/local/lib/node_modules/firebase-tools/lib/emulator/registry.js:18:9)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-03-05T10:49:25.023Z] ----------------------------------------------------------------------
+[debug] [2024-03-05T10:49:25.027Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2024-03-05T10:49:25.027Z] CLI Version:   13.4.0
+[debug] [2024-03-05T10:49:25.027Z] Platform:      darwin
+[debug] [2024-03-05T10:49:25.028Z] Node Version:  v20.5.1
+[debug] [2024-03-05T10:49:25.028Z] Time:          Tue Mar 05 2024 12:49:25 GMT+0200 (Eastern European Standard Time)
+[debug] [2024-03-05T10:49:25.028Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-05T10:49:25.145Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-05T10:49:25.145Z] > authorizing via signed-in user (thaher.alamir@hotmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2024-03-05T10:49:25.877Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:49:25.878Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-05T10:49:25.883Z] [hub] writing locator at /tmp/hub-lumityo-project.json
+[debug] [2024-03-05T10:49:26.929Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:49:26.929Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T10:49:26.929Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2024-03-05T10:49:26.932Z] defaultcredentials: writing to file /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json
+[debug] [2024-03-05T10:49:26.941Z] Setting GAC to /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json"}}
+[debug] [2024-03-05T10:49:26.943Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig [none]
+[debug] [2024-03-05T10:49:27.600Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig 200
+[debug] [2024-03-05T10:49:27.601Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig {"projectId":"lumityo-project","storageBucket":"lumityo-project.appspot.com","locationId":"europe-west"}
+[info] i  ui: downloading ui-v1.11.7.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.7.zip..."}}
+[debug] [2024-03-05T10:49:27.624Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip 
+[debug] [2024-03-05T10:49:27.875Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip 200
+[debug] [2024-03-05T10:49:27.875Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.7.zip [stream]
+[debug] [2024-03-05T10:49:28.899Z] Data is 3064105
+[debug] [2024-03-05T10:49:28.899Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-03-05T10:49:28.899Z] [unzip] Processing entry: client/
+[debug] [2024-03-05T10:49:28.899Z] [unzip] mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/
+[debug] [2024-03-05T10:49:28.900Z] [unzip] Entry: client/favicon.ico (compressed_size=2497 bytes, uncompressed_size=7406 bytes)
+[debug] [2024-03-05T10:49:28.900Z] [unzip] Processing entry: client/favicon.ico
+[debug] [2024-03-05T10:49:28.900Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.900Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/favicon.ico
+[debug] [2024-03-05T10:49:28.906Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=7231 bytes, uncompressed_size=7367 bytes)
+[debug] [2024-03-05T10:49:28.906Z] [unzip] Processing entry: client/apple-touch-icon.png
+[debug] [2024-03-05T10:49:28.906Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.906Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/apple-touch-icon.png
+[debug] [2024-03-05T10:49:28.907Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=16987 bytes, uncompressed_size=18186 bytes)
+[debug] [2024-03-05T10:49:28.907Z] [unzip] Processing entry: client/android-chrome-512x512.png
+[debug] [2024-03-05T10:49:28.907Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.908Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/android-chrome-512x512.png
+[debug] [2024-03-05T10:49:28.909Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-03-05T10:49:28.909Z] [unzip] Processing entry: client/assets/
+[debug] [2024-03-05T10:49:28.909Z] [unzip] mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/
+[debug] [2024-03-05T10:49:28.909Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-03-05T10:49:28.909Z] [unzip] Processing entry: client/assets/extensions/
+[debug] [2024-03-05T10:49:28.909Z] [unzip] mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/extensions/
+[debug] [2024-03-05T10:49:28.910Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2024-03-05T10:49:28.910Z] [unzip] Processing entry: client/assets/extensions/default-extension.png
+[debug] [2024-03-05T10:49:28.910Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/extensions
+[debug] [2024-03-05T10:49:28.910Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/extensions/default-extension.png
+[debug] [2024-03-05T10:49:28.911Z] [unzip] Entry: client/assets/index.58ca09f7.css (compressed_size=37601 bytes, uncompressed_size=321252 bytes)
+[debug] [2024-03-05T10:49:28.911Z] [unzip] Processing entry: client/assets/index.58ca09f7.css
+[debug] [2024-03-05T10:49:28.911Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets
+[debug] [2024-03-05T10:49:28.911Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/index.58ca09f7.css
+[debug] [2024-03-05T10:49:28.913Z] [unzip] Entry: client/assets/index.c2583d42.js (compressed_size=526232 bytes, uncompressed_size=1860152 bytes)
+[debug] [2024-03-05T10:49:28.914Z] [unzip] Processing entry: client/assets/index.c2583d42.js
+[debug] [2024-03-05T10:49:28.914Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets
+[debug] [2024-03-05T10:49:28.914Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/index.c2583d42.js
+[debug] [2024-03-05T10:49:28.928Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-03-05T10:49:28.928Z] [unzip] Processing entry: client/assets/provider-icons/
+[debug] [2024-03-05T10:49:28.928Z] [unzip] mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/
+[debug] [2024-03-05T10:49:28.928Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2024-03-05T10:49:28.928Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2024-03-05T10:49:28.928Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.929Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2024-03-05T10:49:28.929Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2024-03-05T10:49:28.930Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2024-03-05T10:49:28.930Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.930Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2024-03-05T10:49:28.931Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2024-03-05T10:49:28.932Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_phone.svg
+[debug] [2024-03-05T10:49:28.932Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.932Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_phone.svg
+[debug] [2024-03-05T10:49:28.933Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2024-03-05T10:49:28.933Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_saml.svg
+[debug] [2024-03-05T10:49:28.933Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.933Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_saml.svg
+[debug] [2024-03-05T10:49:28.934Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2024-03-05T10:49:28.934Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2024-03-05T10:49:28.934Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.935Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2024-03-05T10:49:28.935Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2024-03-05T10:49:28.935Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2024-03-05T10:49:28.936Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.936Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2024-03-05T10:49:28.936Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2024-03-05T10:49:28.937Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2024-03-05T10:49:28.937Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.937Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2024-03-05T10:49:28.937Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2024-03-05T10:49:28.937Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_github.svg
+[debug] [2024-03-05T10:49:28.937Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.938Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_github.svg
+[debug] [2024-03-05T10:49:28.938Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2024-03-05T10:49:28.938Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_apple.svg
+[debug] [2024-03-05T10:49:28.938Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.938Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_apple.svg
+[debug] [2024-03-05T10:49:28.939Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2024-03-05T10:49:28.939Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_google.svg
+[debug] [2024-03-05T10:49:28.939Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.939Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_google.svg
+[debug] [2024-03-05T10:49:28.940Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2024-03-05T10:49:28.940Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_email.svg
+[debug] [2024-03-05T10:49:28.940Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.940Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_email.svg
+[debug] [2024-03-05T10:49:28.940Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2024-03-05T10:49:28.941Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2024-03-05T10:49:28.941Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.941Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2024-03-05T10:49:28.941Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2024-03-05T10:49:28.941Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2024-03-05T10:49:28.941Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons
+[debug] [2024-03-05T10:49:28.941Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2024-03-05T10:49:28.942Z] [unzip] Entry: client/assets/index.c2583d42.js.map (compressed_size=1778557 bytes, uncompressed_size=7961927 bytes)
+[debug] [2024-03-05T10:49:28.942Z] [unzip] Processing entry: client/assets/index.c2583d42.js.map
+[debug] [2024-03-05T10:49:28.942Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets
+[debug] [2024-03-05T10:49:28.942Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/index.c2583d42.js.map
+[debug] [2024-03-05T10:49:28.985Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-03-05T10:49:28.985Z] [unzip] Processing entry: client/assets/img/
+[debug] [2024-03-05T10:49:28.985Z] [unzip] mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/img/
+[debug] [2024-03-05T10:49:28.985Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2024-03-05T10:49:28.985Z] [unzip] Processing entry: client/assets/img/database.png
+[debug] [2024-03-05T10:49:28.985Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/img
+[debug] [2024-03-05T10:49:28.985Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/assets/img/database.png
+[debug] [2024-03-05T10:49:28.986Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=838 bytes, uncompressed_size=1504 bytes)
+[debug] [2024-03-05T10:49:28.986Z] [unzip] Processing entry: client/safari-pinned-tab.svg
+[debug] [2024-03-05T10:49:28.986Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.987Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/safari-pinned-tab.svg
+[debug] [2024-03-05T10:49:28.987Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=5406 bytes, uncompressed_size=5723 bytes)
+[debug] [2024-03-05T10:49:28.988Z] [unzip] Processing entry: client/mstile-150x150.png
+[debug] [2024-03-05T10:49:28.988Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.988Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/mstile-150x150.png
+[debug] [2024-03-05T10:49:28.989Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2024-03-05T10:49:28.989Z] [unzip] Processing entry: client/browserconfig.xml
+[debug] [2024-03-05T10:49:28.989Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.989Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/browserconfig.xml
+[debug] [2024-03-05T10:49:28.990Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2024-03-05T10:49:28.990Z] [unzip] Processing entry: client/robots.txt
+[debug] [2024-03-05T10:49:28.990Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.990Z] [unzip] Writing file: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/robots.txt
+[debug] [2024-03-05T10:49:28.991Z] [unzip] Entry: client/index.html (compressed_size=1363 bytes, uncompressed_size=3064 bytes)
+[debug] [2024-03-05T10:49:28.991Z] [unzip] Processing entry: client/index.html
+[debug] [2024-03-05T10:49:28.991Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.991Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/index.html
+[debug] [2024-03-05T10:49:28.992Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=757 bytes, uncompressed_size=777 bytes)
+[debug] [2024-03-05T10:49:28.992Z] [unzip] Processing entry: client/favicon-16x16.png
+[debug] [2024-03-05T10:49:28.992Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.992Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/favicon-16x16.png
+[debug] [2024-03-05T10:49:28.993Z] [unzip] Entry: client/manifest.json (compressed_size=246 bytes, uncompressed_size=551 bytes)
+[debug] [2024-03-05T10:49:28.993Z] [unzip] Processing entry: client/manifest.json
+[debug] [2024-03-05T10:49:28.993Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.993Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/manifest.json
+[debug] [2024-03-05T10:49:28.994Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=1175 bytes, uncompressed_size=1175 bytes)
+[debug] [2024-03-05T10:49:28.994Z] [unzip] Processing entry: client/favicon-32x32.png
+[debug] [2024-03-05T10:49:28.994Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.994Z] [unzip] Writing file: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/favicon-32x32.png
+[debug] [2024-03-05T10:49:28.995Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=7602 bytes, uncompressed_size=7834 bytes)
+[debug] [2024-03-05T10:49:28.995Z] [unzip] Processing entry: client/android-chrome-192x192.png
+[debug] [2024-03-05T10:49:28.995Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client
+[debug] [2024-03-05T10:49:28.995Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/client/android-chrome-192x192.png
+[debug] [2024-03-05T10:49:28.996Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2024-03-05T10:49:28.996Z] [unzip] Processing entry: server/
+[debug] [2024-03-05T10:49:28.996Z] [unzip] mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server/
+[debug] [2024-03-05T10:49:28.996Z] [unzip] Entry: server/server.js (compressed_size=343746 bytes, uncompressed_size=1346374 bytes)
+[debug] [2024-03-05T10:49:28.996Z] [unzip] Processing entry: server/server.js
+[debug] [2024-03-05T10:49:28.996Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server
+[debug] [2024-03-05T10:49:28.997Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server/server.js
+[debug] [2024-03-05T10:49:29.004Z] [unzip] Entry: server/server.js.map (compressed_size=289157 bytes, uncompressed_size=1325651 bytes)
+[debug] [2024-03-05T10:49:29.004Z] [unzip] Processing entry: server/server.js.map
+[debug] [2024-03-05T10:49:29.004Z] [unzip] else mkdir: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server
+[debug] [2024-03-05T10:49:29.004Z] [unzip] deflating: /Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server/server.js.map
+[debug] [2024-03-05T10:49:29.010Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-03-05T10:49:29.010Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-03-05T10:49:29.010Z] Starting Emulator UI with command {"binary":"node","args":["/Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-03-05T10:49:29.151Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-03-05T10:49:29.151Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/ghost/Downloads/lumityo-mobileapp-main/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/ghost/Downloads/lumityo-mobileapp-main/functions\" for Cloud Functions..."}}
+[debug] [2024-03-05T10:49:29.273Z] Validating nodejs source
+[debug] [2024-03-05T10:49:30.359Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^8.1.1",
+    "dotenv": "^16.4.5",
+    "firebase": "^10.8.1",
+    "firebase-admin": "^11.8.0",
+    "firebase-functions": "^4.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2024-03-05T10:49:30.359Z] Building nodejs source
+[debug] [2024-03-05T10:49:30.360Z] Failed to find version of module node: reached end of search path /Users/ghost/Downloads/lumityo-mobileapp-main/functions/node_modules
+[warn] ⚠  functions: Your requested "node" version "18" doesn't match your global version "20". Using node@20 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2024-03-05T10:49:30.364Z] Could not find functions.yaml. Must use http discovery
+[debug] [2024-03-05T10:49:30.371Z] Found firebase-functions binary at '/Users/ghost/Downloads/lumityo-mobileapp-main/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8466
+
+[debug] [2024-03-05T10:49:31.097Z] Got response from /__/functions.yaml {"endpoints":{"sendEmail":{"platform":"gcfv1","labels":{},"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"callableTrigger":{},"entryPoint":"sendEmail"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] ✔  functions: Loaded functions definitions from source: sendEmail. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: sendEmail."}}
+[info] ✔  functions[us-central1-sendEmail]: http function initialized (http://127.0.0.1:5001/lumityo-project/us-central1/sendEmail). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/lumityo-project/us-central1/sendEmail)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2024-03-05T12:32:48.172Z] ----------------------------------------------------------------------
+[debug] [2024-03-05T12:32:48.175Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2024-03-05T12:32:48.175Z] CLI Version:   13.4.0
+[debug] [2024-03-05T12:32:48.175Z] Platform:      darwin
+[debug] [2024-03-05T12:32:48.176Z] Node Version:  v20.5.1
+[debug] [2024-03-05T12:32:48.176Z] Time:          Tue Mar 05 2024 14:32:48 GMT+0200 (Eastern European Standard Time)
+[debug] [2024-03-05T12:32:48.176Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-05T12:32:48.304Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-05T12:32:48.305Z] > authorizing via signed-in user (thaher.alamir@hotmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2024-03-05T12:32:49.050Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T12:32:49.050Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2024-03-05T12:32:49.056Z] [hub] writing locator at /var/folders/fk/g975rg9d0z92098bbsn42cjh0000gp/T/hub-lumityo-project.json
+[debug] [2024-03-05T12:32:49.539Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T12:32:49.540Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2024-03-05T12:32:49.540Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[debug] [2024-03-05T12:32:49.545Z] defaultcredentials: writing to file /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json
+[debug] [2024-03-05T12:32:49.560Z] Setting GAC to /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/ghost/.config/firebase/thaher_alamir_hotmail.com_application_default_credentials.json"}}
+[debug] [2024-03-05T12:32:49.561Z] > refreshing access token with scopes: []
+[debug] [2024-03-05T12:32:49.562Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-03-05T12:32:49.563Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-05T12:32:49.784Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-03-05T12:32:49.784Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-03-05T12:32:49.832Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig [none]
+[debug] [2024-03-05T12:32:50.650Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig 200
+[debug] [2024-03-05T12:32:50.650Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/lumityo-project/adminSdkConfig {"projectId":"lumityo-project","storageBucket":"lumityo-project.appspot.com","locationId":"europe-west"}
+[debug] [2024-03-05T12:32:50.683Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2024-03-05T12:32:50.683Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2024-03-05T12:32:50.683Z] Starting Emulator UI with command {"binary":"node","args":["/Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/ghost/.cache/firebase/emulators/ui-v1.11.7/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2024-03-05T12:32:50.688Z] Error: EACCES: permission denied, open 'ui-debug.log'
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-03-05T12:32:50.830Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2024-03-05T12:32:50.830Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[debug] [2024-03-07T17:44:41.639Z] ----------------------------------------------------------------------
+[debug] [2024-03-07T17:44:41.641Z] Command:       /Users/ghost/.nvm/versions/node/v18.19.1/bin/node /usr/local/bin/firebase apps:sdkconfig IOS lumityo-project
+[debug] [2024-03-07T17:44:41.641Z] CLI Version:   13.4.0
+[debug] [2024-03-07T17:44:41.641Z] Platform:      darwin
+[debug] [2024-03-07T17:44:41.641Z] Node Version:  v18.19.1
+[debug] [2024-03-07T17:44:41.643Z] Time:          Thu Mar 07 2024 19:44:41 GMT+0200 (Eastern European Standard Time)
+[debug] [2024-03-07T17:44:41.643Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-03-07T17:44:41.705Z] Field ".functions" in "firebase.json" is possibly invalid: should be object
+[debug] [2024-03-07T17:44:41.705Z] Object ".functions[0]" in "firebase.json" has unknown property: {"additionalProperty":"region"}
+[debug] [2024-03-07T17:44:41.705Z] Field ".functions" in "firebase.json" is possibly invalid: should match some schema in anyOf
+[debug] [2024-03-07T17:44:41.709Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-03-07T17:44:41.709Z] > authorizing via signed-in user (thaher.alamir@hotmail.com)
+[debug] [2024-03-07T17:44:41.714Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/iosApps/lumityo-project/config [none]
+[debug] [2024-03-07T17:44:42.094Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/iosApps/lumityo-project/config 400
+[debug] [2024-03-07T17:44:42.094Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/iosApps/lumityo-project/config {"error":{"code":400,"message":"Request contains an invalid argument.","status":"INVALID_ARGUMENT"}}
+[debug] [2024-03-07T17:44:42.095Z] HTTP Error: 400, Request contains an invalid argument.
+[debug] [2024-03-07T17:44:42.215Z] FirebaseError: HTTP Error: 400, Request contains an invalid argument.
+    at responseToError (/usr/local/lib/node_modules/firebase-tools/lib/responseToError.js:49:12)
+    at RetryOperation._fn (/usr/local/lib/node_modules/firebase-tools/lib/apiv2.js:292:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get IOS app configuration. See firebase-debug.log for more info.

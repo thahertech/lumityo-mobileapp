@@ -1,6 +1,6 @@
 require("dotenv").config();
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const sgMail = require("@sendgrid/mail");
@@ -20,13 +20,13 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE"],
 }));
 
-app.post('/sendEmail', async (req, res) => {
+app.post("/sendEmail", async (req, res) => {
   try {
     const data = req.body; // Assuming data is expected in the request body
 
     console.log("Received data:", data);
 
-    const { firstName, phoneNumber, address, selectedService } = data;
+    const {firstName, phoneNumber, address, selectedService} = data;
 
     // Check required properties are present
     if (!firstName || !phoneNumber || !address || !selectedService) {
@@ -36,9 +36,9 @@ app.post('/sendEmail', async (req, res) => {
     }
 
     const msg = {
-      to: "thaher.alamir@hotmail.com",
-      from: "onefakeblog@gmail.com",
-      subject: "New Order",
+      to: "onefakeblog@gmail.com",
+      from: "thaher381@gmail.com",
+      subject: "Lumityö Tilaus",
       text: `
         New order details:
         -----------------
@@ -50,9 +50,9 @@ app.post('/sendEmail', async (req, res) => {
     };
 
     const sendGridResponse = await sgMail.send(msg);
-    functions.logger.info("SendGrid Response:", sendGridResponse);
+    functions.logger.info("SendGrid Response:", sendGridResponse, "\n \n");
 
-    functions.logger.info("Order successfully stored and email sent:", {
+    functions.logger.info("Order successfully stored and email sent", {
       structuredData: true,
       orderDetails: {
         firstName,
@@ -62,7 +62,7 @@ app.post('/sendEmail', async (req, res) => {
       },
     });
 
-    return res.status(200).json({ result: "Order successfully received." });
+    return res.status(200).json({result: "Order successfully received."});
   } catch (error) {
     console.error("Error processing order:", error);
 

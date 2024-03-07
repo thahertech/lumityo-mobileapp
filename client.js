@@ -1,9 +1,8 @@
 const sendOrderToCloudFunction = async (orderData) => {
-  const backendEndpoint = 'http://localhost:5001/lumityo-project/us-central1/api/sendEmail';
+  const backendEndpoint = 'http://127.0.0.1:5001/lumityo-project/us-central1/api/sendEmail';
 
   try {
-    console.log('Order Data:', orderData); // Log the order data
-
+    console.log('Order Data:', orderData); 
     const response = await fetch(backendEndpoint, {
       method: 'POST',
       headers: {
