@@ -1,4 +1,6 @@
 require("dotenv").config();
+const express = require('express');
+const cors = require('cors');
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const sgMail = require("@sendgrid/mail");
@@ -11,25 +13,44 @@ admin.initializeApp({
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-exports.sendEmail = functions.https.onCall(async (data, context) => {
-  const {firstName, phoneNumber, address, selectedService} = data;
+const app = express();
+app.use(cors({
+  origin: true,
+  allowedHeaders: ["Content-Type"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+}));
 
-  const msg = {
-    to: "XXX",
-    from: "XXX@gmail.com",
-    subject: "New Order",
-    text: `
-      New order details:
-      -----------------
-      Service: ${selectedService}
-      Name: ${firstName}
-      Phone Number: ${phoneNumber}
-      Address: ${address}
-    `,
-  };
-
+app.post('/sendEmail', async (req, res) => {
   try {
-    await sgMail.send(msg);
+    const data = req.body; // Assuming data is expected in the request body
+
+    console.log("Received data:", data);
+
+    const { firstName, phoneNumber, address, selectedService } = data;
+
+    // Check required properties are present
+    if (!firstName || !phoneNumber || !address || !selectedService) {
+      return res.status(400).json({
+        error: "MISSING REQUIRED DATA!!",
+      });
+    }
+
+    const msg = {
+      to: "thaher.alamir@hotmail.com",
+      from: "onefakeblog@gmail.com",
+      subject: "New Order",
+      text: `
+        New order details:
+        -----------------
+        Service: ${selectedService}
+        Name: ${firstName}
+        Phone Number: ${phoneNumber}
+        Address: ${address}
+      `,
+    };
+
+    const sendGridResponse = await sgMail.send(msg);
+    functions.logger.info("SendGrid Response:", sendGridResponse);
 
     functions.logger.info("Order successfully stored and email sent:", {
       structuredData: true,
@@ -41,15 +62,17 @@ exports.sendEmail = functions.https.onCall(async (data, context) => {
       },
     });
 
-
-    return {result: "Order successfully received."};
+    return res.status(200).json({ result: "Order successfully received." });
   } catch (error) {
-    functions.logger.error("Error processing order:", {
-      structuredData: true,
-      error: error.message,
-    });
+    console.error("Error processing order:", error);
 
     // Handle error accordingly
-    return {error: "Error processing order,try again later."};
+    return res.status(500).json({
+      error: "Error processing order, try again later.",
+    });
   }
 });
+
+// No need for functions.https.onCall here
+
+exports.api = functions.https.onRequest(app);
