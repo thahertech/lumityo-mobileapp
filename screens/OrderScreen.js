@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, Image, View, Text, TextInput, TouchableOpacity, Alert, StyleSheet, Platform, KeyboardAvoidingView } from 'react-native';
-import sendOrderToCloudFunction from '../client'; 
+import sendOrderToCloudFunction from '../client';
 import bgImage from '../assets/Mountains.jpg';
 
 const OrderScreen = () => {
@@ -35,16 +35,20 @@ const OrderScreen = () => {
 
     try {
       const response = await sendOrderToCloudFunction({
-        firstName,
-        phoneNumber,
-        address,
-        selectedService,
+
+          firstName,
+          phoneNumber,
+          address,
+          selectedService,
+
       });
 
       if (response.ok) {
+        console.log('Order successfully received!');
         Alert.alert('Tilaus Vahvistettu', `Kiitos ${selectedService} tilauksesta!`);
       } else {
-        Alert.alert('Virhe', 'TIlausta ei vahvistettu. Yritä uudelleen.');
+        console.error('Failed to send order. Status:', response.status);
+        Alert.alert('Virhe', 'Tilausta ei vahvistettu. Yritä uudelleen.');
       }
     } catch (error) {
       console.error('Error occurred:', error);
