@@ -32,29 +32,40 @@ const OrderScreen = () => {
       Alert.alert('Puutteelliset tiedot', 'Täytä kaikki pakolliset kentät.');
       return;
     }
-
+  
     try {
       const response = await sendOrderToCloudFunction({
-
-          firstName,
-          phoneNumber,
-          address,
-          selectedService,
-
+        firstName,
+        phoneNumber,
+        address,
+        selectedService,
       });
-
-      if (response.ok) {
-        console.log('Order successfully received!');
-        Alert.alert('Tilaus Vahvistettu', `Kiitos ${selectedService} tilauksesta!`);
-      } else {
-        console.error('Failed to send order. Status:', response.status);
-        Alert.alert('Virhe', 'Tilausta ei vahvistettu. Yritä uudelleen.');
+  
+      try {
+        if (response.data && response.data === "Email sent successfully") {
+          console.log('Email sent successfully!');
+          Alert.alert('Tilaus Vahvistettu', `Kiitos ${selectedService} tilauksesta!`);
+        } else if (response.status) {
+          // Handle other potential statuses if needed
+          console.error('Failed to send email. Status:', response.status);
+          Alert.alert('Virhe', 'Sähköpostin lähettäminen epäonnistui. Yritä uudelleen.');
+        } else {
+          // Log the entire response object for further inspection
+          console.error('Unexpected response structure:', response);
+          Alert.alert('Virhe', 'Odottamaton vastauksen rakenne. Yritä uudelleen.');
+        }
+  
+        return response;
+      } catch (error) {
+        console.error('Error occurred:', error);
+        throw error;
       }
     } catch (error) {
-      console.error('Error occurred:', error);
-      Alert.alert('Virhe', 'Tilausta ei vahvistettu. Yritä uudelleen.');
+      console.error('Error occurred while calling the cloud function:', error);
+      throw error;
     }
   };
+  
 
   return (
 

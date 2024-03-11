@@ -1,26 +1,46 @@
+import { initializeApp } from 'firebase/app';
+import { getFunctions, httpsCallable } from 'firebase/functions';
+import { Alert } from 'react-native';
+import firebaseConfig from './firebaseConfig'; //Config file imported
+
+
+// Initializing Firebase
+const app = initializeApp(firebaseConfig);
+
+
 const sendOrderToCloudFunction = async (orderData) => {
-  const backendEndpoint = 'http://127.0.0.1:5001/lumityo-project/us-central1/api/sendEmail';
-
   try {
-    console.log('Order Data:', orderData); 
-    const response = await fetch(backendEndpoint, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(orderData),
-    });
+    const functions = getFunctions(app);
+    const sendEmailCallable = httpsCallable(functions, 'sendEmail');
 
-    if (response.ok) {
-      console.log('Order sent successfully!');
-    } else {
-      console.error(`Failed to send order. Status: ${response.status}, ${response.statusText}`);
+    console.log('Order Data:', orderData);
+
+    const response = await sendEmailCallable(orderData);
+
+    try {
+      if (response.data) {
+        console.log('Email sent successfully!');
+      }
+        else if (response.status) {
+
+        console.error('Failed to send email. Status:', response.status);
+        Alert.alert('Virhe', 'Sähköpostin lähettäminen epäonnistui. Yritä uudelleen.');
+      } 
+        else {
+
+        console.error('Unexpected response structure:', response);
+        Alert.alert('Virhe', 'Odottamaton vastauksen rakenne. Yritä uudelleen.');
+      }
+
+      return response;
+      
+    } catch (error) {
+      console.error('Error occurred:', error);
+      throw error;
     }
-
-    return response; // Add this line to return the response object
   } catch (error) {
-    console.error('Fetch error occurred:', error.message);
-    throw error; // Rethrow the error to propagate it
+    console.error('Error occurred while calling the cloud function:', error);
+    throw error;
   }
 };
 

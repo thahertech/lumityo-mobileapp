@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Lumityö",
-    "slug": "Lumityö",
+    "slug": "Lumityo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.senseitech.lumityo"
+      "bundleIdentifier": "com.senseitech.lumityoapp"
     },
     "android": {
       "adaptiveIcon": {
