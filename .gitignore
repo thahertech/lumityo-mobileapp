@@ -79,3 +79,7 @@ yarn-error.*
 
 #googleServices
 GoogleService-Info.plist
+sendgrid.env
+
+# Local Netlify folder
+.netlify

@@ -48,18 +48,20 @@ const styles = StyleSheet.create({
       },
       ios: {
         shadowColor: 'black',
+            fontFamily: 'Inter',
+    fontWeight:'200',
         shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.4,
-        shadowRadius: 5,
+        shadowOpacity: 0.7,
+        shadowRadius: 10,
       },
     }),
   },
   menuItemText: {
     color: 'black',
     textAlign: 'center',
-    fontFamily: 'Arial',
-    fontWeight: 'regular',
-    letterSpacing: 2,
+    fontFamily: 'Inter',
+    fontWeight: '300',
+    letterSpacing: 1,
     fontSize: 36,
   },
   centerText: {
@@ -84,7 +86,7 @@ const styles = StyleSheet.create({
     }),
 
     inputContainer:{
-        color:"black"
+        color:"black",
     }
   },
   confirmButton: {
@@ -94,6 +96,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 2,
+
     },
     backgroundColor: 'lightblue',
     padding: 15,
@@ -104,9 +107,9 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   confirmButtonText: {
-    color: 'white',
-    fontWeight: 'bold',
-  },
+    color: 'black',
+
+    },
 });
 
 export default styles;

@@ -5,6 +5,8 @@ import styles from '../styles';
 import heroImage from '../assets/Mountains.jpg'
 import HeaderImage from '../assets/SnowTruck.png'
 import ContactComponent from './ContactComponent';
+import { StatusBar } from 'react-native';
+
 
 
 const CustomButton = ({ title, onPress }) => (
@@ -17,31 +19,25 @@ const HomeScreen = () => {
   const phoneNumber = '+358407362403';
   const navigation = useNavigation();
 
-  const handleCallButtonPress = () => {
-    const phoneUrl = `tel:${phoneNumber}`;
-
-    Linking.canOpenURL(phoneUrl)
-      .then((supported) => {
-        if (!supported) {
-          console.error("Phone number is not supported on this device.");
-        } else {
-          return Linking.openURL(phoneUrl);
-        }
-      })
-      .catch((err) => console.error('Error occurred:', err));
-  };
 
   const handleOrderButtonPress = () => {
     navigation.navigate('Tilaus');
   };
 
-  return (
+ return (
     <View style={styles.container}>
+      {/* Customize the status bar */}
+      <StatusBar
+        barStyle="dark-content" // or "dark-content" based on your design
+        backgroundColor="transparent" // Use a color if you want a specific background color
+        translucent={true} // Set to true if you want the status bar to be translucent
+      />
 
       <Image
         source={HeaderImage}
         style={styles.smallerHeaderImage}
-        resizeMode="cover" />
+        resizeMode="cover" 
+      />
 
       <Image
         source={heroImage}

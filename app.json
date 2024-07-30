@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#D3D3D3"
     },
@@ -15,29 +15,14 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.senseitech.Lumityo"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#D3D3D3"
-      },
-      "package": "com.senseitech.Lumityo"
-    },
-    "web": {
-      "favicon": "./assets/icon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "a9349e76-7c9f-4f4d-a07b-58436d5f5ac0"
+        "projectId": "fd4c4431-2e39-4b49-907c-7cce8b7e5235"
       }
     },
-    "runtimeVersion": {
-      "policy": "appVersion"
-    },
-    "updates": {
-      "url": "https://u.expo.dev/a9349e76-7c9f-4f4d-a07b-58436d5f5ac0"
-    }
+    "owner": "senseitechh"
   }
 }
